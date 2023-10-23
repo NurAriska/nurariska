@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html"> HOME </a> |
+        <a href="about me.html"> ABOUT ME </a> |
+        <a href="pendidikan.html"> PENDIDIKAN </a> |
+        <a href="jadwal kuliah.html"> JADWAL KULIAH </a> |
+        <a href="buku_tamu.html"> BUKU TAMU </a> |
+        <a href="javascript.html"> JAVASCRIPT </a> |
+        <a href="kalkulator.html"> KALKULATOR </a>
+    </nav>
+    <h1>Luas Persegi Panjang</h1>
+    <p>Masukkan panjang dan lebar untuk menghitung luas persegi panjang:</p>
+    <input type="text" id="panjang" placeholder="Panjang">
+    <input type="text" id="lebar" placeholder="Lebar">
+    <button onclick="hitungLuas()">Hitung</button>
+    <p id="hasilLuas"></p>
+
+    <script>
+        function hitungLuas() {
+            var panjang = parseFloat(document.getElementById("panjang").value);
+            var lebar = parseFloat(document.getElementById("lebar").value);
+
+            if (!isNaN(panjang) && !isNaN(lebar)) {
+                var luas = panjang * lebar;
+                document.getElementById("hasilLuas").textContent = "Luas Persegi Panjang: " + luas;
+            } else {
+                document.getElementById("hasilLuas").textContent = "Masukkan angka yang valid.";
+            }
+        }
+    </script>
+    <h1>Pemeriksaan Angka</h1>
+    <p>Masukkan angka untuk memeriksa apakah itu positif, negatif, atau nol:</p>
+    <input type="text" id="angka" placeholder="Angka">
+    <button onclick="periksaAngka()">Periksa</button>
+    <p id="hasilPemeriksaan"></p>
+
+    <script>
+        function periksaAngka() {
+            var angka = parseFloat(document.getElementById("angka").value);
+
+            if (!isNaN(angka)) {
+                if (angka > 0) {
+                    document.getElementById("hasilPemeriksaan").textContent = angka + " adalah angka positif.";
+                } else if (angka < 0) {
+                    document.getElementById("hasilPemeriksaan").textContent = angka + " adalah angka negatif.";
+                } else {
+                    document.getElementById("hasilPemeriksaan").textContent = angka + " adalah nol.";
+                }
+            } else {
+                document.getElementById("hasilPemeriksaan").textContent = "Masukkan angka yang valid.";
+            }
+        }
+    </script>
+    <!-- Add Bootstrap JS and Popper.js scripts here -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
